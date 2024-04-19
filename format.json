@@ -39,18 +39,14 @@
   "bms_mpio1": [1, "bool", "", 0, 1, "High Voltage;IO"],
   
 
-  "park_brake": [1, "bool", "", 0, 1, "Main IO;Sensors"],
   "air_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
   "brake_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
   "dcdc_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
-  "mainIO_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
   "motor_controller_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
   "motor_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
   "road_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
   "l_turn_led_en": [1, "bool", "", 0, 1, "Main IO;Lights"],
   "r_turn_led_en": [1, "bool", "", 0, 1, "Main IO;Lights"],
-  "brake_led_en": [1, "bool", "", 0, 1, "Main IO;Lights"],
-  "headlights_led_en": [1, "bool", "", 0, 1, "Main IO;Lights"],
   "hazards": [1, "bool", "", 0, 0, "Main IO;Lights"],
   "main_5V_bus": [4, "float", "V", 0, 100, "Main IO;Sensors"],
   "main_12V_bus": [4, "float", "V", 0, 100, "Main IO;Sensors"],
