@@ -39,6 +39,7 @@
   "bms_mpio1": [1, "bool", "", 0, 1, "High Voltage;IO"],
   
 
+  "park_brake": [1, "bool", "", 0, 1, "Main IO;Sensors"],
   "air_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
   "brake_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
   "dcdc_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors"],
