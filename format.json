@@ -1,6 +1,6 @@
 {
   "accelerator_pedal": [4, "float", "%", 0, 1, "MCC;Sensors"],
-  "speed": [4, "float", "mph", 0, 100, "MCC;Motor Controller I/O"],
+  "speed": [4, "float", "mph", 0, 55, "MCC;Motor Controller I/O"],
   "mcc_state": [1, "uint8", "", 0, 7, "MCC;Firmware"],
   "fr_telem": [1, "bool", "", 0, 1, "MCC;Driver Buttons/Switches"],
   "crz_spd_mode": [1, "bool", "", 0, 1, "MCC;Driver Buttons/Switches"],
