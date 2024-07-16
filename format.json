@@ -82,6 +82,7 @@
   "pack_power": [4, "float", "W", -2760.86, 5521.72, "Battery;Firmware"],
   "populated_cells": [2, "uint16", "", 0, 100, "Battery;BMS CAN"],
   "soc": [4, "float", "%", 0, 100, "Battery;BMS CAN"],
+  "delta_soc": [4, "float", "%", -100, 100, "Battery;BMS CAN"],
   "soh": [4, "float", "%", 0, 100, "Battery;BMS CAN"],
   "pack_amphours": [4, "float", "Ah", 57, 57, "Battery;BMS CAN"],
   "adaptive_total_capacity": [4, "float", "Ah", 0, 100, "Battery;BMS CAN"],
