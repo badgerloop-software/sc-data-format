@@ -62,8 +62,10 @@
   "mppt_can_heartbeat": [1, "bool", "", 1, 1, "Main IO;Firmware"],
 
 
+  "boost_enable": [1, "bool", "", 1, 1, "Solar Array;Sensors"],
   "mppt_mode": [1, "bool", "", 0, 1, "Solar Array;MPPT"],
-  "mppt_current_out": [4, "float", "A", 0, 7, "Solar Array;Sensors"],
+  "mppt_target_voltage": [4, "float", 0, 120, "Solar Array;MPPT"],
+  "mppt_target_current": [4, "float", 0, 60, "Solar Array;MPPT"],
   "string1_temp": [4, "float", "degC", 20, 50, "Solar Array;Sensors"],
   "string2_temp": [4, "float", "degC", 20, 50, "Solar Array;Sensors"],
   "string3_temp": [4, "float", "degC", 20, 50, "Solar Array;Sensors"],
@@ -73,7 +75,12 @@
   "string1_I_in": [4, "float", "A", 0, 7, "Solar Array;Sensors"],
   "string2_I_in": [4, "float", "A", 0, 7, "Solar Array;Sensors"],
   "string3_I_in": [4, "float", "A", 0, 7, "Solar Array;Sensors"],
-  
+  "string1_duty": [4, "uint16", "%", 0, 100, "Solar Array;MPPT"],
+  "string2_duty": [4, "uint16", "%", 0, 100, "Solar Array;MPPT"],
+  "string3_duty": [4, "uint16", "%", 0, 100, "Solar Array;MPPT"],
+  "string1_target": [4, "float", "", 0, 120, "Solar Array;MPPT"],
+  "string2_target": [4, "float", "", 0, 120, "Solar Array;MPPT"],
+  "string3_target": [4, "float", "", 0, 120, "Solar Array;MPPT"],
 
   "pack_temp": [4, "float", "degC", 0, 55, "Battery;BMS CAN"],
   "pack_internal_temp": [4, "float", "degC", 0, 100, "Battery;BMS CAN"],
