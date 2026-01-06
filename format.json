@@ -164,7 +164,7 @@
   "cell_group29_voltage": [4, "float", "V", 2.5, 3.65, "Battery;BMS"],
   "cell_group30_voltage": [4, "float", "V", 2.5, 3.65, "Battery;BMS"],
   "cell_group31_voltage": [4, "float", "V", 2.5, 3.65, "Battery;BMS"],
-
+  
 
   "tstamp_ms": [2, "uint16", "ms", 0, 999, "Software;Timestamp"],
   "tstamp_sc": [1, "uint8", "s", 0, 59, "Software;Timestamp"],
@@ -173,6 +173,13 @@
   "tstamp_unix": [8, "uint64", "ms", 0, 0, "Software;Timestamp"],
   "lat": [4, "float", "Degree", 0, 0, "Software;GPS"],
   "lon": [4, "float", "Degree", 0, 0, "Software;GPS"],
-  "elev": [4, "float", "meter", 0, 0, "Software;GPS"]
+  "elev": [4, "float", "meter", 0, 0, "Software;GPS"],
+  "lap_count": [4, "int32", "", 0, 1000, "Software;Lap Counter"],
+  "current_section": [4, "int32", "", 0, 100, "Software;Lap Counter"],
+  "lap_duration": [4, "uint32", "ms", 0, 600000, "Software;Lap Counter"],
+ 
+  "optimized_target_power": [4, "float", "kW", 0, 10, "Race Strategy;Model Outputs"],
+  "maximum_distance_traveled": [4, "float", "m", 0, 100000, "Race Strategy;Model Outputs"]
 }
   
+
