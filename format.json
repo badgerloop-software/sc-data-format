@@ -15,7 +15,6 @@
   "motor_power": [4, "float", "W", 0, 100, "MCC;Firmware", "FFF", 0],
   "mc_status": [1, "uint8", "", 0, 0, "PDC;Motor Controller I/O", "207", 2],
 
-
   "driver_eStop": [1, "bool", "", 0, 0, "High Voltage;Shutdown", "FFF", 0],
   "external_eStop": [1, "bool", "", 0, 0, "High Voltage;Shutdown", "FFF", 0],
   "crash": [1, "bool", "", 0, 0, "High Voltage;Shutdown", "FFF", 0],
@@ -39,7 +38,6 @@
   "use_supp": [1, "bool", "", 0, 0, "High Voltage;MPS", "FFF", 0],
   "est_supplemental_soc": [4, "float", "%", 0, 100, "Battery;Supplemental", "FFF", 0],
   "bms_mpio1": [1, "bool", "", 0, 1, "High Voltage;IO", "FFF", 0],
-  
 
   "park_brake": [1, "bool", "", 0, 1, "PDC;Sensors", "207", 3],
   "air_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors", "FFF", 0],
@@ -66,7 +64,6 @@
   "mcc_can_heartbeat": [1, "bool", "", 1, 1, "Main IO;Firmware", "FFF", 0],
   "mppt_can_heartbeat": [1, "bool", "", 1, 1, "Main IO;Firmware", "FFF", 0],
 
-
   "mppt_mode": [1, "bool", "", 0, 1, "Solar Array;MPPT", "401", 0],
   "mppt_current_out": [4, "float", "A", 0, 7, "Solar Array;Sensors", "FFF", 0],
   "string1_temp": [4, "float", "degC", 20, 50, "Solar Array;Sensors", "404", 0],
@@ -78,7 +75,6 @@
   "string1_I_in": [4, "float", "A", 0, 7, "Solar Array;Sensors", "403", 0],
   "string2_I_in": [4, "float", "A", 0, 7, "Solar Array;Sensors", "408", 0],
   "string3_I_in": [4, "float", "A", 0, 7, "Solar Array;Sensors", "413", 0],
-  
 
   "pack_temp": [1, "float", "degC", 0, 55, "Battery;BMS", "102", 40],
   "pack_internal_temp": [1, "float", "degC", 0, 100, "Battery;BMS", "102", 48],
@@ -165,7 +161,6 @@
   "cell_group30_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group31_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
 
-
   "tstamp_ms": [2, "uint16", "ms", 0, 999, "Software;Timestamp", "FFF", 0],
   "tstamp_sc": [1, "uint8", "s", 0, 59, "Software;Timestamp", "FFF", 0],
   "tstamp_mn": [1, "uint8", "min", 0, 59, "Software;Timestamp", "FFF", 0],
@@ -173,6 +168,12 @@
   "tstamp_unix": [8, "uint64", "ms", 0, 0, "Software;Timestamp", "FFF", 0],
   "lat": [4, "float", "Degree", 0, 0, "Software;GPS", "FFF", 0],
   "lon": [4, "float", "Degree", 0, 0, "Software;GPS", "FFF", 0],
-  "elev": [4, "float", "meter", 0, 0, "Software;GPS", "FFF", 0]
+  "elev": [4, "float", "meter", 0, 0, "Software;GPS", "FFF", 0],
+  "lap_count": [4, "int32", "", 0, 1000, "Software;Lap Counter", "FFF", 0],
+  "current_section": [4, "int32", "", 0, 100, "Software;Lap Counter", "FFF", 0],
+  "lap_duration": [4, "uint32", "ms", 0, 600000, "Software;Lap Counter", "FFF", 0],
+ 
+  "optimized_target_power": [4, "float", "kW", 0, 10, "Race Strategy;Model Outputs", "FFF", 0],
+  "maximum_distance_traveled": [4, "float", "m", 0, 100000, "Race Strategy;Model Outputs", "FFF", 0]
 }
 
