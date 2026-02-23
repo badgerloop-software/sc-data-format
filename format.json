@@ -150,8 +150,8 @@
   "park_brake": [1, "bool", "", 0, 1, "PDC;Sensors", "207", 3],
   "regen_brake": [4, "float", "%", 0, 1, "PDC;Sensors", "201", 0],
 
-  "maximum_distance_traveled": [4, "float", "m", 0, 100000, "Race Strategy;Model Outputs"],
-  "optimized_target_power": [4, "float", "kW", 0, 10, "Race Strategy;Model Outputs"],
+  "maximum_distance_traveled": [4, "float", "m", 0, 100000, "Race Strategy;Model Outputs", "FFF", 0],
+  "optimized_target_power": [4, "float", "kW", 0, 10, "Race Strategy;Model Outputs", "FFF", 0],
 
   "elev": [4, "float", "meter", 0, 0, "Software;GPS", "FFF", 0],
   "lat": [4, "float", "Degree", 0, 0, "Software;GPS", "FFF", 0],
