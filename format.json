@@ -150,6 +150,20 @@
   "park_brake": [1, "bool", "", 0, 1, "PDC;Sensors", "207", 3],
   "regen_brake": [4, "float", "%", 0, 1, "PDC;Sensors", "201", 0],
 
+  "batt_i": [4, "float", "A", -50, 50, "Powertrain;Sensors", "503", 0],
+  "i_12v": [4, "float", "A", 0, 20, "Powertrain;Sensors", "500", 0],
+  "supp_i": [4, "float", "A", 0, 100, "Powertrain;Sensors", "502", 0],
+  "supp_v": [4, "float", "V", 0, 100, "Powertrain;Sensors", "504", 0],
+  "v_12v": [4, "float", "V", 0, 15, "Powertrain;Sensors", "501", 0],
+
+  "BATT_POS_CONT_MCU": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 1],
+  "ESTOP_MCU": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 0],
+  "MC_CONT_MCU": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 6],
+  "MCU_BATT_EN": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 4],
+  "MPPT_CONT_MCU": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 5],
+  "PPC1_DCDC_INVALID": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 2],
+  "PPC1_SUPP_INVALID": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 3],
+
   "maximum_distance_traveled": [4, "float", "m", 0, 100000, "Race Strategy;Model Outputs", "FFF", 0],
   "optimized_target_power": [4, "float", "kW", 0, 10, "Race Strategy;Model Outputs", "FFF", 0],
 
