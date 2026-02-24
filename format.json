@@ -123,7 +123,6 @@
   "mcc_can_heartbeat": [1, "bool", "", 1, 1, "Main IO;Firmware", "FFF", 0],
   "mppt_can_heartbeat": [1, "bool", "", 1, 1, "Main IO;Firmware", "FFF", 0],
 
-  "hazards": [1, "bool", "", 0, 0, "Main IO;Lights", "FFF", 0],
   "headlights_led_en": [1, "bool", "", 0, 1, "Main IO;Lights", "FFF", 0],
 
   "air_temp": [4, "float", "degC", 0, 100, "Main IO;Sensors", "FFF", 0],
@@ -195,8 +194,16 @@
   "string3_temp": [4, "float", "degC", 20, 50, "Solar Array;Sensors", "414", 0],
 
   "crz_spd_mode": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 3],
-  "fr_telem": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 0],
-
-  "l_turn_led_en": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "300", 1],
-  "r_turn_led_en": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "300", 2]
+  "headlight": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "300", 0],
+  "left_blink": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "300", 1],
+  "right_blink": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "300", 2],
+  "hazards": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "304", 0],
+  "direction_switch": [1, "bool", "forward/reverse direction", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 3],
+  "horn": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 4],
+  "crz_mode_a": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 5],
+  "crz_set": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 6],
+  "crz_reset": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 7],
+  "regen_brake": [4, "float", "%", 0, 1, "Steering Wheel;Sensors", "301", 0],
+  "throttle": [4, "float", "%", 0, 1, "Steering Wheel;Sensors", "302", 0],
+  "drive_mode": [1, "uint8", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "303", 0]
 }
