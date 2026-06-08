@@ -169,7 +169,7 @@
   "right_blink": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "300", 2],
   "hazards": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "304", 0],
 
-  "direction_switch": [1, "bool", "forward/reverse direction", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 3],
+  "direction_switch": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 3],
   "horn": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 4],
   "crz_mode_a": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 5],
   "crz_set": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 6],
