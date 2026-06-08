@@ -97,9 +97,9 @@
   "mph": [4, "float", "mph", 0, 100, "PDC;Motor Controller I/O", "208", 0],
   "acc_out": [4, "float", "V", 0, 3.3, "PDC;Motor Controller I/O", "200", 0],
 
-  "lv_12V_telem": [4, "float", "V", 0, 50, "PDC;Sensors", "202", 0],
-  "lv_5V_telem": [4, "float", "V", 0, 10, "PDC;Sensors", "203", 0],
-  "lv_5V_current": [4, "float", "A", 0, 100, "PDC;Sensors", "204", 0],
+  "lv_12v_telem": [4, "float", "V", 0, 50, "PDC;Sensors", "202", 0],
+  "lv_5v_telem": [4, "float", "V", 0, 10, "PDC;Sensors", "203", 0],
+  "lv_5v_current": [4, "float", "A", 0, 100, "PDC;Sensors", "204", 0],
   "park_brake": [1, "bool", "", 0, 1, "PDC;Sensors", "207", 4],
   "acc_in": [4, "float", "V", 0, 3.3, "PDC;Sensors", "209", 0],
   "current_in_telem": [4, "float", "A", 0, 100, "PDC;Sensors", "205", 0],
