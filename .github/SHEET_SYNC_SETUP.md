@@ -169,7 +169,7 @@ Review `tools/reports/sync-report.md` for added/changed signals before running t
 
 These tabs use the same columns as `Better Template`. They produce `FFF` placeholder entries (not decoded from CAN):
 
-- **Software** — section headers `Timestamp`, `GPS`, and `Lap Counter` set the category (`Software;Timestamp`, etc.).
+- **Software** — optional section headers `Timestamp`, `GPS`, and `Lap Counter` set the category. Firmware names must resolve to known keys (e.g. `tstamp_unix`, not only `tstamp_unix (tstamp_unix)` — the parser accepts the parenthetical form too).
 - **Race Strategy** — all rows map to `Race Strategy;Model Outputs`. Use **Serial** direction for cloud-sim values the Pi forwards onto the bus.
 
 If a tab is missing from the workbook, the sync skips it and leaves those signals unchanged.

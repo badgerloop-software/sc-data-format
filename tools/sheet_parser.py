@@ -124,6 +124,20 @@ def _should_skip_sheet(name: str, config: dict[str, Any]) -> bool:
     return False
 
 
+def _normalize_firmware_key(name: str) -> str:
+    """Strip trailing parenthetical text from firmware names.
+
+    Software tab entries often look like `tstamp_unix (tstamp_unix)`.
+    Only the portion before the parentheses is used as the format.json key.
+    """
+    text = name.strip()
+    while True:
+        stripped = re.sub(r"\s*\([^)]*\)\s*$", "", text).strip()
+        if stripped == text:
+            return text
+        text = stripped
+
+
 def _is_example_row(firmware_name: str, schematic_name: str) -> bool:
     combined = f"{firmware_name} {schematic_name}".lower()
     return combined.startswith("ex") or "example" in combined
@@ -184,7 +198,7 @@ def _resolve_key(
         return _mppt_key(row_label, config)
 
     if firmware_name:
-        base = firmware_name.strip()
+        base = _normalize_firmware_key(firmware_name)
         if base in overrides:
             return overrides[base]
         upper = base.upper()
@@ -220,6 +234,8 @@ def parse_workbook(path: str, config: dict[str, Any]) -> tuple[list[ParsedSignal
 
         for row_idx, row in enumerate(rows[header_idx + 1 :], start=header_idx + 2):
             firmware_name = _cell_str(row[columns["firmware_name"]]) if "firmware_name" in columns else ""
+            if firmware_name:
+                firmware_name = _normalize_firmware_key(firmware_name)
             schematic_name = _cell_str(row[columns["schematic_name"]]) if "schematic_name" in columns else ""
             row_label = _cell_str(row[0])
 
@@ -233,7 +249,6 @@ def parse_workbook(path: str, config: dict[str, Any]) -> tuple[list[ParsedSignal
             if sheet_name == "Race Strategy" and not firmware_name and not row_label:
                 continue
 
-            firmware_name = firmware_name.strip()
             key = _resolve_key(sheet_name, firmware_name, schematic_name, row_label, config)
             if not key:
                 if row_label or firmware_name or schematic_name:
