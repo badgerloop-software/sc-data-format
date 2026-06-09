@@ -1,5 +1,6 @@
 .venv/
 tools/downloads/
 tools/reports/
+gha-creds-*.json
 __pycache__/
 *.pyc

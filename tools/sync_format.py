@@ -58,6 +58,11 @@ def main() -> int:
 
     before = _load_json(format_path)
     parsed, notes = parse_workbook(xlsx_path, config)
+    for sheet in config.get("parse_sheets", []):
+        count = sum(1 for s in parsed if s.sheet == sheet)
+        print(f"Parsed {count} signals from sheet '{sheet}'")
+    for note in notes:
+        print(f"note: {note}")
     merged, parsed_signals = merge_signals(str(format_path), parsed, config)
     after_text = render_format_json(merged, config)
     after = json.loads(after_text)

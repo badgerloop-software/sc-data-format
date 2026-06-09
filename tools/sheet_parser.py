@@ -129,12 +129,14 @@ def _is_example_row(firmware_name: str, schematic_name: str) -> bool:
     return combined.startswith("ex") or "example" in combined
 
 
-def _resolve_software_category(first_col: str, current: str | None, config: dict[str, Any]) -> str | None:
+def _software_section_category(label: str, config: dict[str, Any]) -> str | None:
+    """Return category if this row is a Software tab section header."""
     sections = config.get("software_sections", {})
-    for label, category in sections.items():
-        if first_col.strip().lower() == label.strip().lower():
+    normalized = label.strip().lower()
+    for name, category in sections.items():
+        if normalized == name.strip().lower():
             return category
-    return current
+    return None
 
 
 def _mcc_key(
@@ -222,9 +224,10 @@ def parse_workbook(path: str, config: dict[str, Any]) -> tuple[list[ParsedSignal
             row_label = _cell_str(row[0])
 
             if sheet_name == "Software":
-                maybe_section = _resolve_software_category(row_label, software_category, config)
-                if maybe_section and maybe_section != software_category and not firmware_name:
-                    software_category = maybe_section
+                section_label = firmware_name or row_label
+                section_category = _software_section_category(section_label, config)
+                if section_category:
+                    software_category = section_category
                     continue
 
             if sheet_name == "Race Strategy" and not firmware_name and not row_label:

@@ -29,6 +29,7 @@ jobs:
         with:
           workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          cleanup_credentials: true
 
       - name: Install dependencies
         run: pip install -r tools/requirements.txt
@@ -61,6 +62,8 @@ jobs:
           body-path: tools/reports/pr-body.md
           commit-message: "Sync format.json from firmware signal spreadsheet"
           labels: automation
+          add-paths: |
+            format.json
 
       - name: Upload sync report
         uses: actions/upload-artifact@v4
