@@ -19,3 +19,9 @@ The following information is listed within the format for each piece of data bei
 For each piece of data, the information described above will be listed as follows:
 
 &emsp;"name": [\<<i>num bytes</i>\>, "data_type", "units", \<<i>nominal min</i>\>, \<<i>nominal max</i>\>, "Category/Subsystem", "CAN ID (hex)", <i>bit offset</i>]
+
+## Spreadsheet sync
+
+`format.json` can be updated automatically from the firmware signal spreadsheet. In the repo, go to **Actions → Sync format.json from spreadsheet → Run workflow** to parse the sheet and open a PR with any changes. Check **dry_run** to generate a diff report only, without opening a PR.
+
+See [Sheet sync setup](.github/SHEET_SYNC_SETUP.md) for GCP Workload Identity Federation, GitHub secrets, and local dry-run instructions.
