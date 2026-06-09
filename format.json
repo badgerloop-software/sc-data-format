@@ -6,15 +6,6 @@
   "cell_asic_fault": [1, "bool", "", 0, 0, "Battery;BMS", "100", 23],
   "cell_balancing_active": [1, "bool", "", 1, 1, "Battery;BMS", "100", 3],
   "cell_balancing_stuck_off_fault": [1, "bool", "", 0, 0, "Battery;BMS", "100", 17],
-  "cell_group1_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
-  "cell_group2_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
-  "cell_group3_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
-  "cell_group4_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
-  "cell_group5_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
-  "cell_group6_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
-  "cell_group7_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
-  "cell_group8_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
-  "cell_group9_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group10_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group11_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group12_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
@@ -25,6 +16,7 @@
   "cell_group17_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group18_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group19_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
+  "cell_group1_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group20_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group21_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group22_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
@@ -35,8 +27,16 @@
   "cell_group27_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group28_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group29_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
+  "cell_group2_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group30_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "cell_group31_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
+  "cell_group3_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
+  "cell_group4_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
+  "cell_group5_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
+  "cell_group6_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
+  "cell_group7_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
+  "cell_group8_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
+  "cell_group9_voltage": [2, "float", "V", 2.5, 3.65, "Battery;BMS", "103", 8],
   "charge_interlock_failsafe": [1, "bool", "", 0, 0, "Battery;BMS", "100", 4],
   "charge_limit_enforcement_fault": [1, "bool", "", 0, 0, "Battery;BMS", "100", 31],
   "charger_safety_relay_fault": [1, "bool", "", 0, 0, "Battery;BMS", "100", 1],
@@ -82,12 +82,10 @@
 
   "crz_pwr_mode": [1, "bool", "", 0, 1, "MCC;Driver Buttons/Switches", "FFF", 0],
   "main_telem": [1, "bool", "", 0, 1, "MCC;Driver Buttons/Switches", "FFF", 0],
-
   "crz_pwr_setpt": [4, "float", "W", 0, 100, "MCC;Firmware", "FFF", 0],
   "crz_spd_setpt": [4, "float", "mph", 0, 100, "MCC;Firmware", "FFF", 0],
   "mcc_state": [1, "uint8", "", 0, 7, "MCC;Firmware", "FFF", 0],
   "motor_power": [4, "float", "W", 0, 100, "MCC;Firmware", "FFF", 0],
-
   "foot_brake": [1, "bool", "", 0, 1, "MCC;Sensors", "FFF", 0],
   "motor_current": [4, "float", "A", 0, 100, "MCC;Sensors", "FFF", 0],
 
@@ -104,7 +102,6 @@
   "acc_in": [4, "float", "V", 0, 3.3, "PDC;Sensors", "209", 0],
   "current_in_telem": [4, "float", "A", 0, 100, "PDC;Sensors", "205", 0],
   "brake_pressure_telem": [4, "float", "V", 0, 3.3, "PDC;Sensors", "206", 0],
-
   "mc_on": [1, "bool", "", 0, 1, "PDC;Motor Controller I/O", "207", 3],
   "regen_brake_pdc": [4, "float", "V", 0, 3.3, "PDC;Motor Controller I/O", "201", 0],
 
@@ -114,52 +111,56 @@
   "supp_v": [4, "float", "V", 0, 100, "Powertrain;Sensors", "504", 0],
   "v_12v": [4, "float", "V", 0, 15, "Powertrain;Sensors", "501", 0],
 
-  "batt_pos_cont": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 2],
+  "batt_pos_cont": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 1],
   "batt_neg_cont": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 0],
-  "estop_mcu": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 1],
-  "mc_cont_mcu": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 7],
-  "mcu_batt_en": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 5],
-  "mppt_cont_mcu": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 6],
-  "ppc1_dcdc_invalid": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 4],
+  "estop_mcu": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 0],
+  "mc_cont_mcu": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 6],
+  "mcu_batt_en": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 4],
+  "mppt_cont_mcu": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 5],
+  "ppc1_dcdc_invalid": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 2],
   "ppc1_supp_invalid": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 3],
+
+  "maximum_distance_traveled": [4, "float", "m", 0.0, 100000.0, "Race Strategy;Model Outputs", "FFF", 0],
+  "optimized_target_power": [4, "float", "kW", 0.0, 10.0, "Race Strategy;Model Outputs", "FFF", 0],
+
+  "elev": [4, "float", "meter", 0.0, 0.0, "Software;GPS", "FFF", 0],
+  "lat": [4, "float", "Degree", 0.0, 0.0, "Software;GPS", "FFF", 0],
+  "lon": [4, "float", "Degree", 0.0, 0.0, "Software;GPS", "FFF", 0],
+
+  "current_section": [4, "int32", "", 0.0, 100.0, "Software;Lap Counter", "FFF", 0],
+  "lap_count": [4, "int32", "", 0.0, 1000.0, "Software;Lap Counter", "FFF", 0],
+  "lap_duration": [4, "uint32", "ms", 0.0, 600000.0, "Software;Lap Counter", "FFF", 0],
+
+  "tstamp_unix": [4, "uint32", "ms", 0.0, 0.0, "Software;Timestamp", "FFF", 0],
 
   "boost_enabled": [1, "bool", "", 0, 1, "Solar Array;MPPT", "400", 0],
   "charge_mode": [1, "bool", "", 0, 1, "Solar Array;MPPT", "401", 0],
-
   "string1_i_in": [4, "float", "A", 0, 7, "Solar Array;Sensors", "403", 0],
   "string1_v_in": [4, "float", "V", 0, 60, "Solar Array;Sensors", "402", 0],
   "string1_temp": [4, "float", "degC", 20, 50, "Solar Array;Sensors", "404", 0],
-
   "string1_duty_cycle": [4, "float", "", 0, 1, "Solar Array;MPPT", "405", 0],
   "string1_target_voltage": [4, "float", "V", 0, 110, "Solar Array;MPPT", "406", 0],
-
   "string2_i_in": [4, "float", "A", 0, 7, "Solar Array;Sensors", "408", 0],
   "string2_v_in": [4, "float", "V", 0, 60, "Solar Array;Sensors", "407", 0],
   "string2_temp": [4, "float", "degC", 20, 50, "Solar Array;Sensors", "409", 0],
-
-  "string2_duty_cycle": [4, "float", "", 0, 1, "Solar Array;MPPT", "40A", 0],
-  "string2_target_voltage": [4, "float", "V", 0, 110, "Solar Array;MPPT", "40B", 0],
-
-  "string3_i_in": [4, "float", "A", 0, 7, "Solar Array;Sensors", "40D", 0],
-  "string3_v_in": [4, "float", "V", 0, 60, "Solar Array;Sensors", "40C", 0],
-  "string3_temp": [4, "float", "degC", 20, 50, "Solar Array;Sensors", "40E", 0],
-
-  "string3_duty_cycle": [4, "float", "", 0, 1, "Solar Array;MPPT", "40F", 0],
-  "string3_target_voltage": [4, "float", "V", 0, 110, "Solar Array;MPPT", "410", 0],
+  "string2_duty_cycle": [4, "float", "", 0, 1, "Solar Array;MPPT", "410", 0],
+  "string2_target_voltage": [4, "float", "V", 0, 110, "Solar Array;MPPT", "411", 0],
+  "string3_i_in": [4, "float", "A", 0, 7, "Solar Array;Sensors", "413", 0],
+  "string3_v_in": [4, "float", "V", 0, 60, "Solar Array;Sensors", "412", 0],
+  "string3_temp": [4, "float", "degC", 20, 50, "Solar Array;Sensors", "414", 0],
+  "string3_duty_cycle": [4, "float", "", 0, 1, "Solar Array;MPPT", "415", 0],
+  "string3_target_voltage": [4, "float", "V", 0, 110, "Solar Array;MPPT", "416", 0],
 
   "headlight": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "300", 0],
   "left_blink": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "300", 1],
   "right_blink": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "300", 2],
   "hazards": [1, "bool", "", 0, 1, "Steering Wheel;Lights", "304", 0],
-
   "direction_switch": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 3],
   "horn": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 4],
   "crz_mode_a": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 5],
   "crz_set": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 6],
   "crz_reset": [1, "bool", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "300", 7],
-
   "regen_brake_steering": [4, "float", "V", 0, 3.3, "Steering Wheel;Sensors", "301", 0],
   "throttle": [2, "uint16", "", 0, 4095, "Steering Wheel;Sensors", "302", 0],
-
   "drive_mode": [1, "uint8", "", 0, 1, "Steering Wheel;Driver Buttons/Switches", "303", 0]
 }
