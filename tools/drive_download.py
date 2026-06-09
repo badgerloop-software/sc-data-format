@@ -26,18 +26,15 @@ def _credentials():
             info,
             scopes=DRIVE_SCOPES,
         )
-    path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
-    if path and Path(path).is_file():
-        return service_account.Credentials.from_service_account_file(
-            path,
-            scopes=DRIVE_SCOPES,
-        )
+    # Workload Identity Federation (google-github-actions/auth) sets
+    # GOOGLE_APPLICATION_CREDENTIALS to an external-account config, not a
+    # service-account JSON key. google.auth.default() handles both WIF and gcloud ADC.
     creds, _ = google.auth.default(scopes=DRIVE_SCOPES)
     if creds:
         return creds
     raise RuntimeError(
         "No Google credentials found. Use Workload Identity Federation in CI, "
-        "or set GOOGLE_SERVICE_ACCOUNT_JSON / GOOGLE_APPLICATION_CREDENTIALS locally."
+        "or set GOOGLE_SERVICE_ACCOUNT_JSON for local runs with a JSON key."
     )
 
 
