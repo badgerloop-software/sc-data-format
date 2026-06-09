@@ -123,23 +123,6 @@
   "ppc1_dcdc_invalid": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 4],
   "ppc1_supp_invalid": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 3],
 
-  "maximum_distance_traveled": [4, "float", "m", 0, 100000, "Race Strategy;Model Outputs", "FFF", 0],
-  "optimized_target_power": [4, "float", "kW", 0, 10, "Race Strategy;Model Outputs", "FFF", 0],
-
-  "elev": [4, "float", "meter", 0, 0, "Software;GPS", "FFF", 0],
-  "lat": [4, "float", "Degree", 0, 0, "Software;GPS", "FFF", 0],
-  "lon": [4, "float", "Degree", 0, 0, "Software;GPS", "FFF", 0],
-
-  "current_section": [4, "int32", "", 0, 100, "Software;Lap Counter", "FFF", 0],
-  "lap_count": [4, "int32", "", 0, 1000, "Software;Lap Counter", "FFF", 0],
-  "lap_duration": [4, "uint32", "ms", 0, 600000, "Software;Lap Counter", "FFF", 0],
-
-  "tstamp_hr": [1, "uint8", "hr", 0, 23, "Software;Timestamp", "FFF", 0],
-  "tstamp_mn": [1, "uint8", "min", 0, 59, "Software;Timestamp", "FFF", 0],
-  "tstamp_ms": [2, "uint16", "ms", 0, 999, "Software;Timestamp", "FFF", 0],
-  "tstamp_sc": [1, "uint8", "s", 0, 59, "Software;Timestamp", "FFF", 0],
-  "tstamp_unix": [8, "uint64", "ms", 0, 0, "Software;Timestamp", "FFF", 0],
-
   "boost_enabled": [1, "bool", "", 0, 1, "Solar Array;MPPT", "400", 0],
   "charge_mode": [1, "bool", "", 0, 1, "Solar Array;MPPT", "401", 0],
 
