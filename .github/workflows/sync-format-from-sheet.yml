@@ -1,0 +1,69 @@
+name: Sync format.json from spreadsheet
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Parse and report only (do not open PR)"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+
+      - name: Install dependencies
+        run: pip install -r tools/requirements.txt
+
+      - name: Sync format.json from Google Sheet
+        env:
+          GOOGLE_SHEET_FILE_ID: ${{ secrets.GOOGLE_SHEET_FILE_ID }}
+        run: |
+          ARGS="--report tools/reports/sync-report.md"
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          python tools/sync_format.py $ARGS
+
+      - name: Generate PR body
+        if: inputs.dry_run != true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python tools/llm_pr_body.py tools/reports/sync-report.md > tools/reports/pr-body.md
+
+      - name: Create pull request
+        if: inputs.dry_run != true
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: automation/format-sync
+          delete-branch: true
+          title: "Sync format.json from signal spreadsheet"
+          body-path: tools/reports/pr-body.md
+          commit-message: "Sync format.json from firmware signal spreadsheet"
+          labels: automation
+
+      - name: Upload sync report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sync-report
+          path: tools/reports/sync-report.md

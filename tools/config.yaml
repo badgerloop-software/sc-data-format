@@ -1,0 +1,226 @@
+# Spreadsheet → format.json sync configuration
+
+skip_sheet_patterns:
+  - "SC1"
+skip_sheets:
+  - "Title Page"
+  - "Better Template"
+
+# Tabs parsed from the workbook (BMS is preserved from existing format.json)
+parse_sheets:
+  - PDC_SC2
+  - "Steering Wheel"
+  - MPPT
+  - Powertrain
+  - MCC
+  - Software
+  - "Race Strategy"
+
+preserve_categories:
+  - "Battery;BMS"
+  - "Battery;Firmware"
+
+# Section headers inside the Software tab (first column only)
+software_sections:
+  Timestamp: "Software;Timestamp"
+  GPS: "Software;GPS"
+  "Lap Counter": "Software;Lap Counter"
+
+race_strategy_category: "Race Strategy;Model Outputs"
+
+# Rename duplicate firmware names across boards
+key_overrides:
+  PDC_SC2:
+    regen_brake: regen_brake_pdc
+  "Steering Wheel":
+    regen_brake: regen_brake_steering
+    crz_main: crz_mode_a
+    crz_inc: crz_set
+    crz_dec: crz_reset
+  Powertrain:
+    ESTOP_MCU: estop_mcu
+    BATT_POS_CONT_MCU: batt_pos_cont
+    MCU_BATT_EN: mcu_batt_en
+    MC_CONT_MCU: mc_cont_mcu
+    MPPT_CONT_MCU: mppt_cont_mcu
+    PPC1_DCDC_INVALID: ppc1_dcdc_invalid
+    PPC1_SUPP_INVALID: ppc1_supp_invalid
+
+# format.json category per signal key
+category_by_key:
+  # MCC
+  crz_pwr_mode: "MCC;Driver Buttons/Switches"
+  main_telem: "MCC;Driver Buttons/Switches"
+  crz_pwr_setpt: "MCC;Firmware"
+  crz_spd_setpt: "MCC;Firmware"
+  mcc_state: "MCC;Firmware"
+  motor_power: "MCC;Firmware"
+  foot_brake: "MCC;Sensors"
+  motor_current: "MCC;Sensors"
+  # PDC
+  eco_mode: "PDC;Motor Controller I/O"
+  mc_speed_sig: "PDC;Motor Controller I/O"
+  direction: "PDC;Motor Controller I/O"
+  mph: "PDC;Motor Controller I/O"
+  acc_out: "PDC;Motor Controller I/O"
+  mc_on: "PDC;Motor Controller I/O"
+  regen_brake_pdc: "PDC;Motor Controller I/O"
+  lv_12V_telem: "PDC;Sensors"
+  lv_5V_telem: "PDC;Sensors"
+  lv_5V_current: "PDC;Sensors"
+  park_brake: "PDC;Sensors"
+  acc_in: "PDC;Sensors"
+  current_in_telem: "PDC;Sensors"
+  brake_pressure_telem: "PDC;Sensors"
+  # Powertrain
+  batt_i: "Powertrain;Sensors"
+  i_12v: "Powertrain;Sensors"
+  supp_i: "Powertrain;Sensors"
+  supp_v: "Powertrain;Sensors"
+  v_12v: "Powertrain;Sensors"
+  batt_pos_cont: "Powertrain;Status"
+  batt_neg_cont: "Powertrain;Status"
+  estop_mcu: "Powertrain;Status"
+  mc_cont_mcu: "Powertrain;Status"
+  mcu_batt_en: "Powertrain;Status"
+  mppt_cont_mcu: "Powertrain;Status"
+  ppc1_dcdc_invalid: "Powertrain;Status"
+  ppc1_supp_invalid: "Powertrain;Status"
+  # MPPT
+  boost_enabled: "Solar Array;MPPT"
+  charge_mode: "Solar Array;MPPT"
+  string1_i_in: "Solar Array;Sensors"
+  string1_v_in: "Solar Array;Sensors"
+  string1_temp: "Solar Array;Sensors"
+  string1_duty_cycle: "Solar Array;MPPT"
+  string1_target_voltage: "Solar Array;MPPT"
+  string2_i_in: "Solar Array;Sensors"
+  string2_v_in: "Solar Array;Sensors"
+  string2_temp: "Solar Array;Sensors"
+  string2_duty_cycle: "Solar Array;MPPT"
+  string2_target_voltage: "Solar Array;MPPT"
+  string3_i_in: "Solar Array;Sensors"
+  string3_v_in: "Solar Array;Sensors"
+  string3_temp: "Solar Array;Sensors"
+  string3_duty_cycle: "Solar Array;MPPT"
+  string3_target_voltage: "Solar Array;MPPT"
+  # Steering
+  headlight: "Steering Wheel;Lights"
+  left_blink: "Steering Wheel;Lights"
+  right_blink: "Steering Wheel;Lights"
+  hazards: "Steering Wheel;Lights"
+  direction_switch: "Steering Wheel;Driver Buttons/Switches"
+  horn: "Steering Wheel;Driver Buttons/Switches"
+  crz_mode_a: "Steering Wheel;Driver Buttons/Switches"
+  crz_set: "Steering Wheel;Driver Buttons/Switches"
+  crz_reset: "Steering Wheel;Driver Buttons/Switches"
+  drive_mode: "Steering Wheel;Driver Buttons/Switches"
+  regen_brake_steering: "Steering Wheel;Sensors"
+  throttle: "Steering Wheel;Sensors"
+  # Software
+  elev: "Software;GPS"
+  lat: "Software;GPS"
+  lon: "Software;GPS"
+  current_section: "Software;Lap Counter"
+  lap_count: "Software;Lap Counter"
+  lap_duration: "Software;Lap Counter"
+  tstamp_hr: "Software;Timestamp"
+  tstamp_mn: "Software;Timestamp"
+  tstamp_sc: "Software;Timestamp"
+  tstamp_ms: "Software;Timestamp"
+  tstamp_unix: "Software;Timestamp"
+  # Race Strategy
+  maximum_distance_traveled: "Race Strategy;Model Outputs"
+  optimized_target_power: "Race Strategy;Model Outputs"
+
+# MCC rows map by schematic name (uppercase) or signal title
+mcc_schematic_to_key:
+  MAIN_TELEM: main_telem
+  CRZ_MODE_B_TELEM: crz_pwr_mode
+  BRK_TELEM: foot_brake
+
+mcc_title_to_key:
+  "Motor Power Setpoint": crz_pwr_setpt
+  "Motor Speed Setpoint": crz_spd_setpt
+  "MCC state": mcc_state
+  "Motor power": motor_power
+  "Motor current": motor_current
+
+# MPPT rows without firmware names — map by row label (first column)
+mppt_label_to_key:
+  "Boost Converter Enable": boost_enabled
+  "MPPT Mode": charge_mode
+  "Array 1 Voltage": string1_v_in
+  "Array 1 Current": string1_i_in
+  "Array 1 Temperature": string1_temp
+  "Array 1 PWM": string1_duty_cycle
+  "Array 1 Target": string1_target_voltage
+  "Array 2 Voltage": string2_v_in
+  "Array 2 Current": string2_i_in
+  "Array 2 Temperature": string2_temp
+  "Array 2 PWM": string2_duty_cycle
+  "Array 2 Target": string2_target_voltage
+  "Array 3 Voltage": string3_v_in
+  "Array 3 Current": string3_i_in
+  "Array 3 Temperature": string3_temp
+  "Array 3 PWM": string3_duty_cycle
+  "Array 3 Target": string3_target_voltage
+
+# Units and nominal ranges when not present in the sheet
+signal_defaults:
+  maximum_distance_traveled: {units: m, min: 0, max: 100000}
+  optimized_target_power: {units: kW, min: 0, max: 10}
+  elev: {units: meter, min: 0, max: 0}
+  lat: {units: Degree, min: 0, max: 0}
+  lon: {units: Degree, min: 0, max: 0}
+  current_section: {units: "", min: 0, max: 100, data_type: int32}
+  lap_count: {units: "", min: 0, max: 1000, data_type: int32}
+  lap_duration: {units: ms, min: 0, max: 600000, data_type: uint32}
+  tstamp_hr: {units: "", min: 0, max: 23, data_type: uint8}
+  tstamp_mn: {units: "", min: 0, max: 59, data_type: uint8}
+  tstamp_sc: {units: "", min: 0, max: 59, data_type: uint8}
+  tstamp_ms: {units: "", min: 0, max: 999, data_type: uint16}
+  tstamp_unix: {units: ms, min: 0, max: 0, data_type: uint32}
+  throttle: {units: "", min: 0, max: 4095}
+  mcc_state: {units: "", min: 0, max: 7}
+  drive_mode: {units: "", min: 0, max: 1, data_type: uint8}
+  batt_i: {units: A, min: -50, max: 50}
+  acc_out: {units: V, min: 0, max: 3.3}
+  acc_in: {units: V, min: 0, max: 3.3}
+  regen_brake_pdc: {units: V, min: 0, max: 3.3}
+  regen_brake_steering: {units: V, min: 0, max: 3.3}
+  brake_pressure_telem: {units: V, min: 0, max: 3.3}
+  lv_12V_telem: {units: V, min: 0, max: 50}
+  lv_5V_telem: {units: V, min: 0, max: 10}
+  string1_temp: {units: degC, min: 20, max: 50}
+  string2_temp: {units: degC, min: 20, max: 50}
+  string3_temp: {units: degC, min: 20, max: 50}
+
+# Output key order (blank line inserted after each group tail key)
+section_order:
+  - group: bms
+    keys: []  # filled from preserved entries
+  - group: pack_power
+    keys: [pack_power]
+  - group: mcc
+    keys: [crz_pwr_mode, main_telem, crz_pwr_setpt, crz_spd_setpt, mcc_state, motor_power, foot_brake, motor_current]
+  - group: pdc_motor
+    keys: [eco_mode, mc_speed_sig, direction, mph, acc_out]
+  - group: pdc_sensors
+    keys: [lv_12V_telem, lv_5V_telem, lv_5V_current, park_brake, acc_in, current_in_telem, brake_pressure_telem, mc_on, regen_brake_pdc]
+  - group: powertrain_sensors
+    keys: [batt_i, i_12v, supp_i, supp_v, v_12v]
+  - group: powertrain_status
+    keys: [batt_pos_cont, batt_neg_cont, estop_mcu, mc_cont_mcu, mcu_batt_en, mppt_cont_mcu, ppc1_dcdc_invalid, ppc1_supp_invalid]
+  - group: race_strategy
+    keys: [maximum_distance_traveled, optimized_target_power]
+  - group: software_gps
+    keys: [elev, lat, lon]
+  - group: software_lap
+    keys: [current_section, lap_count, lap_duration]
+  - group: software_timestamp
+    keys: [tstamp_hr, tstamp_mn, tstamp_sc, tstamp_ms, tstamp_unix]
+  - group: mppt
+    keys: [boost_enabled, charge_mode, string1_i_in, string1_v_in, string1_temp, string1_duty_cycle, string1_target_voltage, string2_i_in, string2_v_in, string2_temp, string2_duty_cycle, string2_target_voltage, string3_i_in, string3_v_in, string3_temp, string3_duty_cycle, string3_target_voltage]
+  - group: steering
+    keys: [headlight, left_blink, right_blink, hazards, direction_switch, horn, crz_mode_a, crz_set, crz_reset, regen_brake_steering, throttle, drive_mode]
