@@ -299,5 +299,12 @@ def parse_workbook(path: str, config: dict[str, Any]) -> tuple[list[ParsedSignal
                 )
             )
 
+    for expected in config.get("parse_sheets", []):
+        if expected not in wb.sheetnames:
+            notes.append(f"Missing sheet: {expected} (tab not found in workbook)")
+        else:
+            count = sum(1 for s in signals if s.sheet == expected)
+            notes.append(f"Sheet '{expected}': parsed {count} signals")
+
     wb.close()
     return signals, notes
