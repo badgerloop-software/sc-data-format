@@ -126,6 +126,8 @@
   "elev": [4, "float", "meter", 0.0, 0.0, "Software;GPS", "FFF", 0],
   "lat": [4, "float", "Degree", 0.0, 0.0, "Software;GPS", "FFF", 0],
   "lon": [4, "float", "Degree", 0.0, 0.0, "Software;GPS", "FFF", 0],
+  "lte_status": [1, "bool", "", 0, 1, "Software;Status", "FFF", 0],
+  "serial_status": [1, "bool", "", 0, 1, "Software;Status", "FFF", 0],
 
   "current_section": [4, "int32", "", 0.0, 100.0, "Software;Lap Counter", "FFF", 0],
   "lap_count": [4, "int32", "", 0.0, 1000.0, "Software;Lap Counter", "FFF", 0],
