@@ -112,7 +112,6 @@
   "v_12v": [4, "float", "V", 0, 15, "Powertrain;Sensors", "501", 0],
 
   "batt_pos_cont": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 1],
-  "batt_neg_cont": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 0],
   "estop_mcu": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 0],
   "mc_cont_mcu": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 6],
   "mcu_batt_en": [1, "bool", "", 0, 1, "Powertrain;Status", "505", 4],
