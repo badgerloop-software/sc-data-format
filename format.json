@@ -80,15 +80,6 @@
 
   "pack_power": [4, "float", "W", -2760.86, 5521.72, "Battery;Firmware", "FFF", 0],
 
-  "crz_pwr_mode": [1, "bool", "", 0, 1, "MCC;Driver Buttons/Switches", "FFF", 0],
-  "main_telem": [1, "bool", "", 0, 1, "MCC;Driver Buttons/Switches", "FFF", 0],
-  "crz_pwr_setpt": [4, "float", "W", 0, 100, "MCC;Firmware", "FFF", 0],
-  "crz_spd_setpt": [4, "float", "mph", 0, 100, "MCC;Firmware", "FFF", 0],
-  "mcc_state": [1, "uint8", "", 0, 7, "MCC;Firmware", "FFF", 0],
-  "motor_power": [4, "float", "W", 0, 100, "MCC;Firmware", "FFF", 0],
-  "foot_brake": [1, "bool", "", 0, 1, "MCC;Sensors", "FFF", 0],
-  "motor_current": [4, "float", "A", 0, 100, "MCC;Sensors", "FFF", 0],
-
   "eco_mode": [1, "bool", "", 0, 1, "PDC;Motor Controller I/O", "207", 2],
   "mc_speed_sig": [1, "bool", "", 0, 1, "PDC;Motor Controller I/O", "207", 1],
   "direction": [1, "bool", "", 0, 1, "PDC;Motor Controller I/O", "207", 0],
