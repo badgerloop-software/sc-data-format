@@ -2,7 +2,7 @@
   "abnormal_state_of_charge_behavior": [1, "bool", "", 0, 0, "Battery;BMS", "100", 0],
   "adaptive_total_capacity": [2, "float", "Ah", 0, 100, "Battery;BMS", "100", 32],
   "bms_input_voltage": [2, "float", "V", 12, 24, "Battery;BMS", "102", 24],
-  "bps_fault": [1, "bool", "", 0, 0, "Battery;BMS", "FFF", 0],
+  "bps_fault": [1, "bool", "", 0, 0, "Battery;BMS", "103", 0],
   "cell_asic_fault": [1, "bool", "", 0, 0, "Battery;BMS", "100", 23],
   "cell_balancing_active": [1, "bool", "", 1, 1, "Battery;BMS", "100", 3],
   "cell_balancing_stuck_off_fault": [1, "bool", "", 0, 0, "Battery;BMS", "100", 17],
